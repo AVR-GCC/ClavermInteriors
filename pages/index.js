@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css';
+import Link from 'next/link';
 
 const Home = () => {
   return (
@@ -16,7 +17,7 @@ const Home = () => {
 
         <p className={styles.description}>
           Get started by editing <code>pages/index.js</code>
-        </p>
+        </p>Read <Link href="/posts/first-post">this page!</Link>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
