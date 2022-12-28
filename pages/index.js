@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Lavines App</title>
+        <title>Claverm Interiors</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
