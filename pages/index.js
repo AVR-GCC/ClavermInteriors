@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css';
 import mainImage from '../public/main-image.jpg';
 import secondaryImage from '../public/secondary-image-1.jpg';
+import logoImage from '../public/logo-image.png';
 import Link from 'next/link';
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
       <main>
         <div className={styles.topSection}>
           <div className={styles.logo}>
-            Logo
+            <img src={logoImage.src} alt="logo-image" width="300px"></img>
           </div>
           <div className={styles.tabs}>
             Tabs
