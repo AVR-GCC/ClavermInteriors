@@ -20,7 +20,10 @@ const Home = () => {
             <img src={logoImage.src} alt="logo-image" width="300px"></img>
           </div>
           <div className={styles.tabs}>
-            Tabs
+            <div className={styles.tab}>Home</div>
+            <div className={styles.tab}>Work</div>
+            <div className={styles.tab}>press</div>
+            <div className={styles.tab}>contact</div>
           </div>
         </div>
         <div className={styles.bottomSection}>

@@ -45,3 +45,13 @@
   margin: 15px;
   width: 60%;
 }
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.tab {
+  text-transform: capitalize;
+}
