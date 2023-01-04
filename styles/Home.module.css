@@ -37,22 +37,34 @@
 
 .decriptionTitle {
   text-align: center;
-  font-size: 30px;
-  margin: 15px;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 4px;
 }
 
 .decriptionText {
   text-align: center;
   margin: 15px;
   width: 60%;
+  font-size: 22px;
 }
 
 .tabs {
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  font-size: 20px;
+  color: #383838;
+  cursor: pointer;
 }
 
 .tab {
+  display: flex;
+  justify-content: center;
   text-transform: capitalize;
+  padding: 15px;
+  width: 100px;
+}
+
+.tab:hover {
+  background: #f3f3f3;
 }
