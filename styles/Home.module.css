@@ -89,8 +89,13 @@
   border-radius: 10px;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
   width: 400px;
   padding: 10px;
+}
+
+.contactLine:hover {
+  background-color: #b2ffbe;
 }
 
 .contactIcon {

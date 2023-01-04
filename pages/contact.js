@@ -4,8 +4,8 @@ import { FaPhone } from 'react-icons/fa';
 import { MdMail } from 'react-icons/md';
 import { BsFacebook, BsInstagram } from 'react-icons/bs';
 
-const ContactLine = ({ icon, text }) => (
-    <div className={styles.contactLine}>
+const ContactLine = ({ icon, text, onClick }) => (
+    <div className={styles.contactLine} onClick={onClick}>
         <div className={styles.contactIcon}>
             {icon}
         </div>
@@ -34,6 +34,9 @@ const Contact = () => {
                 <ContactLine
                     icon={<BsFacebook />}
                     text={'Claverm Interiors'}
+                    onClick={() => {
+
+                    }}
                 />
                 <ContactLine
                     icon={<BsInstagram />}
