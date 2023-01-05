@@ -35,7 +35,7 @@ const Contact = () => {
                     icon={<BsFacebook />}
                     text={'Claverm Interiors'}
                     onClick={() => {
-
+                        window.open('https://www.facebook.com/people/Claverm-Interior/100063714871819/?mibextid=ZbWKwL', '_blank');
                     }}
                 />
                 <ContactLine
