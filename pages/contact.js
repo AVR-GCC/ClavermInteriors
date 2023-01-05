@@ -16,6 +16,8 @@ const ContactLine = ({ icon, text, onClick }) => (
 );
 
 const Contact = () => {
+    const email = 'claverminteriors@gmail.com';
+    const subject = 'Regarding your website';
     return (
         <div>
             <TitleBar />
@@ -29,7 +31,10 @@ const Contact = () => {
                 />
                 <ContactLine
                     icon={<MdMail />}
-                    text={'claverminteriors@gmail.com'}
+                    text={email}
+                    onClick={() => {
+                        window.open(`mailto:${email}?subject=${subject}&body=`);
+                    }}
                 />
                 <ContactLine
                     icon={<BsFacebook />}
@@ -41,6 +46,9 @@ const Contact = () => {
                 <ContactLine
                     icon={<BsInstagram />}
                     text={'Claverm Interiors'}
+                    onClick={() => {
+                        window.open('https://instagram.com/claverminteriors?igshid=OGQ2MjdiOTE=', '_blank');
+                    }}
                 />
             </div>
         </div>
