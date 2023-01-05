@@ -29,7 +29,7 @@ const Contact = () => {
                 />
                 <ContactLine
                     icon={<MdMail />}
-                    text={'lavinecharles046@gmail.com'}
+                    text={'claverminteriors@gmail.com'}
                 />
                 <ContactLine
                     icon={<BsFacebook />}

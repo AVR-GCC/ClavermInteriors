@@ -23,7 +23,7 @@ const Home = () => {
               Why Claverm cares about your interior.
             </div>
             <div className={styles.decriptionText}>
-              Every space we spend our time in deserves to be homely and habitable. We as Claverm Interiors we add a touch of class to make it look modern and stylish,antique and polished and to fit our clients standards and preference.
+              Every space we spend our time in deserves to be homely and should lift us up emotionally. We as Claverm Interiors we add a touch of class to make it look modern and stylish,antique and polished and to fit our clients standards and preference.
           </div>
           <div className={styles.secondaryImage}></div>
             <img src={secondaryImage.src} alt="secondary-image" width="100%"></img>
