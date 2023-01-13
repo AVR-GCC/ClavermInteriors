@@ -51,7 +51,6 @@
 
 .tabs {
   display: flex;
-  justify-content: space-between;
   font-size: 20px;
   color: #383838;
   cursor: pointer;
