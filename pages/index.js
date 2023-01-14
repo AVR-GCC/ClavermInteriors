@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css';
 import mainImage from '../public/main-image.jpg';
 import watermark1 from '../public/Watermark.jpg';
+import background from '../public/background.jpeg';
 import watermarked12 from '../public/Watermark.jpg';
 import shop from '../public/shop.jpg';
 import complete from '../public/complete.jpg';
@@ -17,7 +18,15 @@ const Home = () => {
 
       <main>
         <TitleBar />
-        <div className={styles.bottomSection}>
+        <div
+          className={styles.bottomSection}
+          style={{
+            backgroundImage: `url(${background.src})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '100% 100%',
+            fill: '20%'
+          }}
+        >
           <div className={styles.mainImage}>
             <img src={mainImage.src} alt="main-image" width="100%"></img>
           </div>
