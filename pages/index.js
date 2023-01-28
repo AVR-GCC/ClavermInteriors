@@ -9,6 +9,8 @@ import complete from '../public/complete.jpg';
 import TitleBar from './components/titleBar';
 
 const Home = () => {
+  const screenWidth = window.outerWidth;
+  const screenHeight = window.outerHeight;
   return (
     <div className={styles.container}>
       <Head>
@@ -17,16 +19,22 @@ const Home = () => {
       </Head>
 
       <main>
-        <TitleBar />
         <div
-          className={styles.bottomSection}
           style={{
+            position: 'fixed',
+            width: screenWidth,
+            height: screenHeight,
+            marginTop: 190,
+            marginLeft: -15,
             backgroundImage: `url(${background.src})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: '100% 100%',
-            fill: '20%'
+            opacity: 0.2,
+            zIndex: -1
           }}
-        >
+        />
+        <TitleBar />
+        <div className={styles.bottomSection}>
           <div className={styles.mainImage}>
             <img src={mainImage.src} alt="main-image" width="100%"></img>
           </div>
