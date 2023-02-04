@@ -1,19 +1,23 @@
 import styles from '../../styles/Home.module.css';
 import Link from 'next/link';
+import { useRouter } from 'next/router'
 import logoImage from '../../public/logo-image.png';
 
-const TitleBar = () => (
-    <div className={styles.topSection}>
-        <Link className={styles.logo} href="/">
-            <img src={logoImage.src} alt="logo-image" width="300px"></img>
-        </Link>
-        <div className={styles.tabs}>
-            <Link className={styles.tab} href="/">Home</Link>
-            <Link className={styles.tab} href="/work">Work</Link>
-            {/* <Link className={styles.tab} href="/press">press</Link> */}
-            <Link className={styles.tab} href="/contact">contact</Link>
+const TitleBar = () => {
+    const router = useRouter();
+    return (
+        <div className={styles.topSection}>
+            <Link className={styles.logo} href="/">
+                <img src={logoImage.src} alt="logo-image" height="150px"></img>
+            </Link>
+            <div className={styles.tabs}>
+                <Link className={styles.tab} style={{ color: router.pathname === '/' ? '#999' : '#2e2e2e' }} href="/">Home</Link>
+                <Link className={styles.tab} style={{ color: router.pathname === '/work' ? '#999' : '#2e2e2e' }} href="/work">Work</Link>
+                {/* <Link className={styles.tab} href="/press">press</Link> */}
+                <Link className={styles.tab} style={{ color: router.pathname === '/contact' ? '#999' : '#2e2e2e' }} href="/contact">contact</Link>
+            </div>
         </div>
-    </div>
-);
+    );
+}
 
 export default TitleBar;

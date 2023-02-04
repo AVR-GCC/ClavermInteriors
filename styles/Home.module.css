@@ -10,19 +10,24 @@
 .topSection {
   display: flex;
   position: fixed;
+  flex-direction: column;
   background: rgb(255, 255, 255);
   top: 0;
   left: 0;
   width: -webkit-fill-available;
-  height: 160px;
+  height: 190px;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
   border-bottom: 2px solid rgb(240, 240, 240);
 }
 
 .bottomSection {
-  margin-top: 200px;
+  margin-top: 220px;
+}
+
+.logo {
+  height: 150px;
 }
 
 .descriptionSection {
@@ -51,8 +56,10 @@
 
 .tabs {
   display: flex;
+  border-top: solid 1px #0000000f;
+  width: 1250px;
+  justify-content: center;
   font-size: 20px;
-  color: #383838;
   cursor: pointer;
 }
 
@@ -64,13 +71,18 @@
 .tab {
   display: flex;
   justify-content: center;
-  text-transform: capitalize;
+  text-transform: uppercase;
   padding: 15px;
-  width: 100px;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #2e2e2e;
+  transition: 500ms;
 }
 
 .tab:hover {
-  background: #f3f3f3;
+  color: #999999;
 }
 
 .contactTitle {
