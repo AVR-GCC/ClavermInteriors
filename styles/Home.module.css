@@ -1,10 +1,12 @@
 .container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
+  /* min-height: 100vh; */
+  /* padding: 0 0.5rem; */
+  margin-left: -8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .topSection {
@@ -20,10 +22,12 @@
   align-items: center;
   padding: 20px 20px 10px 20px;
   border-bottom: 2px solid rgb(240, 240, 240);
+  z-index: 3;
 }
 
 .bottomSection {
   margin-top: 220px;
+  margin-left: -16px;
 }
 
 .logo {
