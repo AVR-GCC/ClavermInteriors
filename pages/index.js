@@ -18,6 +18,9 @@ const Home = () => {
       <Head>
         <title>Claverm Interiors</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
       </Head>
 
       <main>
@@ -34,7 +37,7 @@ const Home = () => {
               Why Claverm cares about your interior.
             </div>
             <div className={styles.decriptionText}>
-              Every space we spend our time in deserves to be homely and should lift us up emotionally. We as Claverm Interiors we add a touch of class to make it look modern and stylish,antique and polished and to fit our clients standards and preference.
+              Every space we spend our time in deserves to be homely and should lift us up emotionally. We as Claverm Interiors, add a touch of class to make it look modern and stylish, antique and polished and to fit our clients standards and preference.
             </div>
           </div>
           {/* <img src={watermark1.src} alt="main-image" width="50%"></img> */}
@@ -45,4 +48,5 @@ const Home = () => {
     </div>
   )
 };
-        export default Home
+
+export default Home;
