@@ -1,0 +1,71 @@
+.topFooter {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #656565;
+    color: #fff;
+    height: 300px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 20%;
+    height: 70%;
+    padding: 30px;
+    color: rgb(221, 221, 221);
+}
+
+.divider {
+    border-bottom: solid 1px #777777;
+    width: 100px;
+    margin: 10px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+}
+
+.socialIcon {
+    color: rgb(221, 221, 221);
+    font-size: 40px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.socialIcon:hover {
+    color: rgb(255, 255, 255);
+}
+
+.sectionTitle {
+    cursor: default;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.sectionText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 8px;
+    font-weight: 300;
+}
+
+.bottomFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    color: #545454;
+    height: 80px;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: default;
+}

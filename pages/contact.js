@@ -1,4 +1,5 @@
 import TitleBar from "./components/titleBar";
+import Footer from "./components/footer";
 import styles from '../styles/Home.module.css';
 import { FaPhone } from 'react-icons/fa';
 import { MdMail } from 'react-icons/md';
@@ -50,6 +51,7 @@ const Contact = () => {
                         window.open('https://instagram.com/claverminteriors?igshid=OGQ2MjdiOTE=', '_blank');
                     }}
                 />
+                <Footer />
             </div>
         </div>
     )

@@ -11,6 +11,7 @@ import shop from '../public/shop.jpg';
 import complete from '../public/complete.jpg';
 import TitleBar from './components/titleBar';
 import ImageReel from './components/imageReel';
+import Footer from './components/footer';
 
 const Home = () => {
   return (
@@ -41,6 +42,7 @@ const Home = () => {
           {/* <img src={shop.src} alt="main-image" width="50%"></img>
           <img src={complete.src} alt="main-image" width="50%"></img> */}
         </div>
+        <Footer />
       </main>
     </div>
   )
