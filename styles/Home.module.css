@@ -91,7 +91,7 @@
 }
 
 .tab:hover {
-  color: #999999;
+  color: #999999 !important;
 }
 
 .contactTitle {
