@@ -8,7 +8,7 @@ const TitleBar = () => {
     return (
         <div className={styles.topSection}>
             <Link className={styles.logo} href="/">
-                <img src={logoImage.src} alt="logo-image" height="150px"></img>
+                <img src={logoImage.src} alt="logo-image" height="100px"></img>
             </Link>
             <div className={styles.tabs}>
                 <Link className={styles.tab} style={{ color: router.pathname === '/' ? '#999' : '#2e2e2e' }} href="/">Home</Link>
