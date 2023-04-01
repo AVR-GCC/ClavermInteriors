@@ -32,6 +32,7 @@ const Home = () => {
             <div className={styles.decriptionTitle}>
               Why Claverm cares about your interior.
             </div>
+            <div className={styles.divider} />
             <div className={styles.decriptionText}>
               Every space we spend our time in deserves to be homely and should lift us up emotionally. We as Claverm Interiors, add a touch of class to make it look modern and stylish, antique and polished and to fit our clients standards and preference.
             </div>

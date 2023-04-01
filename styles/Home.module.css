@@ -17,7 +17,7 @@
   top: 0;
   left: 0;
   width: -webkit-fill-available;
-  height: 140px;
+  height: 165px;
   justify-content: space-between;
   align-items: center;
   padding: 20px 20px 10px 20px;
@@ -26,12 +26,11 @@
 }
 
 .bottomSection {
-  margin-top: 170px;
-  margin-left: -16px;
+  margin-top: 150px;
 }
 
 .logo {
-  height: 150px;
+  height: 100px;
 }
 
 .descriptionSection {
@@ -92,6 +91,13 @@
 
 .tab:hover {
   color: #999999 !important;
+}
+
+.divider {
+  border-bottom: solid 1px #dddddd;
+  width: 100px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .contactTitle {

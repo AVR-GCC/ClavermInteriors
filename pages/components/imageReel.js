@@ -10,7 +10,7 @@ const OPACITY_INCREMENT_AMOUNT = 1;
 
 const ImageReel = ({
     images,
-    width = "calc(100% + 16px)",
+    width = "100%",
     height = 700
 }) => {
     const [imageOpacity, setImageOpacity] = useState(1);

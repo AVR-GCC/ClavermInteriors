@@ -15,10 +15,6 @@ a {
   box-sizing: border-box;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
 
 h1,
 h2,
@@ -35,4 +31,28 @@ ul {
 button {
   padding: 0.5rem 1rem;
   font-weight: bold;
+}
+
+/* Handle */
+.body::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border: solid 3px #ffffff;
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+.body::-webkit-scrollbar-thumb:hover {
+  background: #e4e4e4;
+}
+
+/* Track */
+.body::-webkit-scrollbar-track {
+  background: transparent;
+  border-left: none;
+}
+
+/* width */
+.body::-webkit-scrollbar {
+  z-index: 6;
+  width: 12px;
 }
