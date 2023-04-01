@@ -22,7 +22,7 @@
   align-items: center;
   padding: 20px 20px 10px 20px;
   border-bottom: 2px solid rgb(240, 240, 240);
-  z-index: 3;
+  z-index: 4;
 }
 
 .bottomSection {
