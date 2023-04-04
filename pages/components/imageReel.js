@@ -3,6 +3,7 @@ import { noop } from 'lodash';
 import styles from '../../styles/ImageReel.module.css';
 import { wait } from '../../utils';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import Animate from './animate';
 
 const IMAGE_TIME = 3000;
 const OPACITY_INCREMENT_TIME = 8;
@@ -20,33 +21,22 @@ const ImageReel = ({
     const intervalRef = useRef(null);
     const topImageIndexRef = useRef(0);
 
+    const animateFunctions = useRef({});
+
     const getNewNextImageIndex = (index) => {
         if (index === images.length) return 0;
         if (index === -1) return images.length - 1;
         return index;
     }
 
-    const fade = () => new Promise(async (resolve) => {
-        let opacity = 1;
-        while (opacity > 0) {
-            const prevOpacity = opacity * 100;
-            const newOpacity = (prevOpacity - OPACITY_INCREMENT_AMOUNT) / 100;
-            setImageOpacity(newOpacity);
-            opacity = newOpacity;
-            await wait(OPACITY_INCREMENT_TIME);
-        }
-        setImageOpacity(0);
-        resolve(true);
-    });
-
     const fadeAndSwitch = async (toIndex) => {
         setCanSwitch(false);
         setBottomImageIndex(toIndex);
-        await fade();
+        await animateFunctions.current.fadeOut();
         setTopImageIndex(toIndex);
         topImageIndexRef.current = toIndex;
         await wait(100);
-        setImageOpacity(1);
+        await animateFunctions.current.reset();
         setCanSwitch(true);
     };
 
@@ -91,23 +81,24 @@ const ImageReel = ({
     return (
         <div className={styles.mainImage}>
             {_arrows()}
+            <Animate getMethods={funcsObject => animateFunctions.current = funcsObject}>
+                <img
+                    className={styles.image}
+                    style={{
+                        width,
+                        height,
+                        zIndex: 1
+                    }}
+                    src={images[topImageIndex]}
+                    alt="main-image"
+                ></img>
+            </Animate>
             <img
                 className={styles.image}
                 style={{
                     width,
                     height,
-                    opacity: imageOpacity,
-                    zIndex: 2
-                }}
-                src={images[topImageIndex]}
-                alt="main-image"
-            ></img>
-            <img
-                className={styles.image}
-                style={{
-                    width,
-                    height,
-                    zIndex: 1
+                    zIndex: -1
                 }}
                 src={images[bottomImageIndex]}
                 alt="secondary-image"
