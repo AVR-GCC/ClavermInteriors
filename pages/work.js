@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PictureHolder from "./components/pictureHolder";
 import TitleBar from "./components/titleBar";
 import styles from '../styles/Home.module.css';
 import watermark1 from '../public/Watermark.jpg';
@@ -75,6 +76,7 @@ const Work = () => {
             <TitleBar />
             <div className={styles.bottomSection}>
                 {_tabs()}
+                <PictureHolder image={console.src} />
                 {_project(jobs[currentJob])}
             </div>
         </div>
