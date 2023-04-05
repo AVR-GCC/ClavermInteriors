@@ -6,15 +6,12 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import Animate from './animate';
 
 const IMAGE_TIME = 3000;
-const OPACITY_INCREMENT_TIME = 8;
-const OPACITY_INCREMENT_AMOUNT = 1;
 
 const ImageReel = ({
     images,
     width = "100%",
     height = 700
 }) => {
-    const [imageOpacity, setImageOpacity] = useState(1);
     const [topImageIndex, setTopImageIndex] = useState(0);
     const [bottomImageIndex, setBottomImageIndex] = useState(1);
     const [canSwitch, setCanSwitch] = useState(true);

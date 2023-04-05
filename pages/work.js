@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import PictureHolder from "./components/pictureHolder";
 import TitleBar from "./components/titleBar";
 import styles from '../styles/Home.module.css';
@@ -6,78 +5,100 @@ import watermark1 from '../public/Watermark.jpg';
 import watermark3 from '../public/Watermarked3.jpg';
 import watermark4 from '../public/Watermarked4.jpg';
 import watermark5 from '../public/Watermarked5.jpg';
+import watermark6 from '../public/Watermarked6.jpg';
+import watermark7 from '../public/Watermarked7.jpg';
+import watermark8 from '../public/Watermarked11.jpg';
 import console from '../public/console.jpg';
+import Footer from './components/footer';
 
 
 const Work = () => {
-    const [currentJob, setCurrentJob] = useState(0);
     const jobs = [
         {
             title: 'Kileleshwa',
             images: [
-                watermark1.src,
-                console.src
+                watermark1,
+                console
             ]
         },
         {
             title: 'Kilimani 1',
             images: [
-                watermark4.src,
-                watermark5.src
+                watermark4,
+                watermark5
             ]
         },
         {
             title: 'Kilimani 2',
             images: [
-                watermark3.src
+                watermark3
+            ]
+        },
+        {
+            title: 'Some',
+            images: [
+                watermark7
+            ]
+        },
+        {
+            title: 'Other',
+            images: [
+                watermark8
+            ]
+        },
+        {
+            title: 'Project',
+            images: [
+                watermark6
             ]
         },
     ];
 
-    const _tabs = () => (
-        <div 
-            className={styles.tabs}
-            style={{ borderBottom: '2px solid rgb(240, 240, 240)' }}
-        >
+    const _body = () => (
+        <div className={styles.workBody}>
             {jobs.map((job, index) => (
                 <div
-                    className={styles.tab}
-                    onClick={() => setCurrentJob(index)}
-                    style={{ border: `2px solid ${currentJob === index ? 'rgb(0, 240, 240)' : 'transparent'}` }}
-                    /* this was added after we finished talking
-                    I added the style that adds a border to the tab
-                    what it says is: add a 2 pixel solid border,
-                    if the index of this tab is the "currentJob" make it this (rgb(0, 240, 240)) color,
-                    otherwise make it transparent
-                    */
+                    key={`${job.title}-pic-holder`}
+                    className={styles.pictureHolderHolder}
                 >
-                    {job.title}
+                    <PictureHolder
+                        job={job}
+                        index={index}
+                        clickZoom={() => {
+                            console.log('zoom');
+                        }}
+                    />
                 </div>
             ))}
         </div>
-    );
-
-    const _project = (job) => (
+    )/* : (
         <div>
-            <div className={styles.descriptionSection}>
-                <div className={styles.decriptionTitle}>
-                    Project {currentJob + 1}.
-                </div>
-                <div className={styles.decriptionText}>{job.title}</div>
+            <img
+                src={jobs[index].images[0].src}
+                alt={jobs[index].title}
+            />
+            <div>
+                {jobs[index].map(image => (
+                    <img
+                        src={image.src}
+                        alt={image.src}
+                        style={{
+                            resizeMode: 'cover'
+                        }}
+                        height={500}
+                        widht={500}
+                    />
+                ))}
             </div>
-            {job.images.map((image, index) => (
-                <img src={image} alt={image} width="50%" style={{ marginLeft: '25vw', marginTop: index === 0 ? 0 : 40 }}></img>
-            ))}
         </div>
-    )
+    );*/
 
     return (
         <div>
             <TitleBar />
             <div className={styles.bottomSection}>
-                {_tabs()}
-                <PictureHolder image={console.src} />
-                {_project(jobs[currentJob])}
+                {_body()}
+                <Footer />
             </div>
         </div>
     );
