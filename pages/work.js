@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from "next/router";
+import Page from "./components/page";
 import PictureHolder from "./components/pictureHolder";
-import TitleBar from "./components/titleBar";
 import { defined } from '../utils';
 import styles from '../styles/Home.module.css';
 import watermark1 from '../public/Watermark.jpg';
@@ -12,12 +12,10 @@ import watermark6 from '../public/Watermarked6.jpg';
 import watermark7 from '../public/Watermarked7.jpg';
 import watermark8 from '../public/Watermarked11.jpg';
 import consoleimg from '../public/console.jpg';
-import Footer from './components/footer';
 import ZoomPicture from './components/zoomPicture';
 
 function Work() {
     const [zoomPic, setZoomPic] = useState({ job: -1, image: -1 });
-    console.log('zoomPic', zoomPic);
     const router = useRouter();
     const index = router?.query?.index;
     const jobs = [
@@ -136,20 +134,16 @@ function Work() {
     );
 
     return (
-        <div>
-            <TitleBar />
-            <div className={styles.bottomSection}>
-                {zoomPic.job !== -1 && zoomPic.image !== -1 && (
-                    <ZoomPicture
-                        pic={jobs[zoomPic.job].images[zoomPic.image]}
-                        clickArrow={defined(index) && clickArrow}
-                        onXClick={() => setZoomPic({ job: -1, image: -1 })}
-                    />
-                )}
-                {_body()}
-                <Footer />
-            </div>
-        </div>
+        <Page>
+            {zoomPic.job !== -1 && zoomPic.image !== -1 && (
+                <ZoomPicture
+                    pic={jobs[zoomPic.job].images[zoomPic.image]}
+                    clickArrow={defined(index) && clickArrow}
+                    onXClick={() => setZoomPic({ job: -1, image: -1 })}
+                />
+            )}
+            {_body()}
+        </Page>
     );
 }
 
