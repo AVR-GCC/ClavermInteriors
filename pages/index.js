@@ -9,7 +9,7 @@ import ImageReel from './components/imageReel';
 
 const Home = () => {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Claverm Interiors</title>
       </Head>
@@ -33,7 +33,7 @@ const Home = () => {
           </div>
         </Page>
       </main>
-    </div>
+    </>
   )
 };
 
