@@ -23,34 +23,36 @@ const Contact = () => {
         <div>
             <TitleBar />
             <div className={styles.bottomSection}>
-                <div className={styles.contactTitle}>
-                    Contact
+                <div className={styles.contactContainer}>
+                    <div className={styles.contactTitle}>
+                        Contact
+                    </div>
+                    <ContactLine
+                        icon={<FaPhone />}
+                        text={'+254792414667, +254715331708'}
+                    />
+                    <ContactLine
+                        icon={<MdMail />}
+                        text={email}
+                        onClick={() => {
+                            window.open(`mailto:${email}?subject=${subject}&body=`);
+                        }}
+                    />
+                    <ContactLine
+                        icon={<BsFacebook />}
+                        text={'Claverm Interiors'}
+                        onClick={() => {
+                            window.open('https://www.facebook.com/people/Claverm-Interior/100063714871819/?mibextid=ZbWKwL', '_blank');
+                        }}
+                    />
+                    <ContactLine
+                        icon={<BsInstagram />}
+                        text={'Claverm Interiors'}
+                        onClick={() => {
+                            window.open('https://instagram.com/claverminteriors?igshid=OGQ2MjdiOTE=', '_blank');
+                        }}
+                    />
                 </div>
-                <ContactLine
-                    icon={<FaPhone />}
-                    text={'+254792414667, +254715331708'}
-                />
-                <ContactLine
-                    icon={<MdMail />}
-                    text={email}
-                    onClick={() => {
-                        window.open(`mailto:${email}?subject=${subject}&body=`);
-                    }}
-                />
-                <ContactLine
-                    icon={<BsFacebook />}
-                    text={'Claverm Interiors'}
-                    onClick={() => {
-                        window.open('https://www.facebook.com/people/Claverm-Interior/100063714871819/?mibextid=ZbWKwL', '_blank');
-                    }}
-                />
-                <ContactLine
-                    icon={<BsInstagram />}
-                    text={'Claverm Interiors'}
-                    onClick={() => {
-                        window.open('https://instagram.com/claverminteriors?igshid=OGQ2MjdiOTE=', '_blank');
-                    }}
-                />
                 <Footer />
             </div>
         </div>

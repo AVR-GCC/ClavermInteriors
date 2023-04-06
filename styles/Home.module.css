@@ -1,6 +1,4 @@
 .container {
-  /* min-height: 100vh; */
-  /* padding: 0 0.5rem; */
   margin-left: -8px;
   display: flex;
   flex-direction: column;
@@ -102,18 +100,22 @@
   margin-bottom: 10px;
 }
 
+.contactContainer {
+  margin-left: 10vw;
+}
+
 .contactTitle {
   margin-left: 40px;
   margin-top: 250px;
   font-size: 35px;
-  font-family: sans-serif;
+  font-family: 'Montserrat',sans-serif;
 }
 
 .contactLine {
   display: flex;
   margin: 10px;
   margin-left: 40px;
-  border: #b2ffbe 2px solid;
+  border: #b3e4b9 2px solid;
   border-radius: 10px;
   justify-content: flex-start;
   align-items: center;
@@ -123,11 +125,11 @@
 }
 
 .contactLine:hover {
-  background-color: #b2ffbe;
+  background-color: #b3e4b9;
 }
 
 .contactIcon {
-  color: #00db00;
+  color: #34a334;
   font-size: 20px;
   margin: 20px 10px;
 }
