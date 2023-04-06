@@ -10,10 +10,6 @@ import ImageReel from './components/imageReel';
 const Home = () => {
   return (
     <>
-      <Head>
-        <title>Claverm Interiors</title>
-      </Head>
-
       <main>
         <Page>
           <ImageReel images={[
