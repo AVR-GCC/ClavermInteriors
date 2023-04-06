@@ -1,4 +1,4 @@
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Contact.module.css';
 import { FaPhone } from 'react-icons/fa';
 import { MdMail } from 'react-icons/md';
 import { BsFacebook, BsInstagram } from 'react-icons/bs';
