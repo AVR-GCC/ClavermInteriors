@@ -1,9 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
-import { noop } from 'lodash';
 import styles from '../../styles/ImageReel.module.css';
 import { wait } from '../../utils';
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import Animate from './animate';
+import ArrowNavigation from './arrowNavigation';
 
 const IMAGE_TIME = 3000;
 
@@ -49,35 +48,15 @@ const ImageReel = ({
 
     const clickArrow = (left = false) => {
         clearInterval(intervalRef.current);
+        if (!canSwitch) return;
         const nextIndexUncorrected = topImageIndexRef.current + (left ? -1 : 1);
         const nextNextIndex = getNewNextImageIndex(nextIndexUncorrected);
         fadeAndSwitch(nextNextIndex);
     };
 
-    const clickArrowLeft = () => clickArrow(true);
-
-    const clickArrowRight = () => clickArrow(false);
-
-    const _arrows = () => (
-        <div className={styles.arrowContainer} style={{ height }}>
-            <div
-                className={styles.arrow}
-                onClick={canSwitch ? clickArrowLeft : noop}
-            >
-                <AiOutlineArrowLeft />
-            </div>
-            <div
-                className={styles.arrow}
-                onClick={canSwitch ? clickArrowRight : noop}
-            >
-                <AiOutlineArrowRight />
-            </div>
-        </div>
-    )
-
     return (
         <div className={styles.mainImage}>
-            {_arrows()}
+            <ArrowNavigation clickArrow={clickArrow} height={height} />
             <Animate getMethods={funcsObject => animateFunctions.current = funcsObject}>
                 <img
                     className={styles.image}
