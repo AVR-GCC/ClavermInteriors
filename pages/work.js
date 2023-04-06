@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { useRouter } from "next/router";
 import PictureHolder from "./components/pictureHolder";
 import TitleBar from "./components/titleBar";
@@ -13,8 +13,11 @@ import watermark7 from '../public/Watermarked7.jpg';
 import watermark8 from '../public/Watermarked11.jpg';
 import consoleimg from '../public/console.jpg';
 import Footer from './components/footer';
+import ZoomPicture from './components/zoomPicture';
 
 function Work() {
+    const [zoomPic, setZoomPic] = useState({ job: -1, image: -1 });
+    console.log('zoomPic', zoomPic);
     const router = useRouter();
     const index = router?.query?.index;
     const jobs = [
@@ -74,6 +77,14 @@ function Work() {
         },
     ];
 
+    const clickArrow = (left = false) => {
+        let image = zoomPic.image + (left ? -1 : 1);
+        const arrLen = jobs[zoomPic.job].images.length;
+        if (image === -1) image = arrLen - 1;
+        if (image === arrLen) image = 0;
+        setZoomPic({ ...zoomPic, image });
+    }
+
     const _body = () => !defined(index) ? (
         <div className={styles.workBody}>
             {jobs.map((job, index) => (
@@ -82,7 +93,7 @@ function Work() {
                         job={job}
                         index={index}
                         clickZoom={() => {
-                            console.log('zoom');
+                            setZoomPic({ job: index, image: 0 });
                         }}
                     />
                 </div>
@@ -91,6 +102,8 @@ function Work() {
     ) : (
         <div className={styles.workJobContainer}>
             <img
+                className={styles.workJobImage}
+                onClick={() => setZoomPic({ job: index, image: 0 })}
                 src={jobs[index].images[0].src}
                 alt={jobs[index].title}
                 style={{
@@ -101,8 +114,10 @@ function Work() {
             />
             <div className={styles.decriptionTitle}>{jobs[index].title}</div>
             <div className={styles.workBody}>
-                {jobs[index].images.map(image => (
+                {jobs[index].images.map((image, i) => (
                     <img
+                        className={styles.workJobImage}
+                        onClick={() => setZoomPic({ job: index, image: i })}
                         key={image.src}
                         src={image.src}
                         alt={image.src}
@@ -124,6 +139,13 @@ function Work() {
         <div>
             <TitleBar />
             <div className={styles.bottomSection}>
+                {zoomPic.job !== -1 && zoomPic.image !== -1 && (
+                    <ZoomPicture
+                        pic={jobs[zoomPic.job].images[zoomPic.image]}
+                        clickArrow={defined(index) && clickArrow}
+                        onXClick={() => setZoomPic({ job: -1, image: -1 })}
+                    />
+                )}
                 {_body()}
                 <Footer />
             </div>

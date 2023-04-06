@@ -21,7 +21,7 @@ const PictureHolder = (props) => {
     }
 
     return (
-        <Link className={styles.pictureHolderContainer} href={jobUrl}>
+        <div className={styles.pictureHolderContainer}>
             <div className={styles.pictureTitle}>{job.title}</div>
             <div
                 style={{
@@ -70,7 +70,7 @@ const PictureHolder = (props) => {
                     {...imgSizeProp}
                 ></img>
             </div>
-        </Link>
+        </div>
     );
 }
 
