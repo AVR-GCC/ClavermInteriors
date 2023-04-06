@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Page from "./components/page";
 import PictureHolder from "./components/pictureHolder";
 import { defined } from '../utils';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Work.module.css';
 import watermark1 from '../public/Watermark.jpg';
 import watermark3 from '../public/Watermarked3.jpg';
 import watermark4 from '../public/Watermarked4.jpg';
@@ -110,7 +110,7 @@ function Work() {
                 }}
                 width={Math.min(jobs[index].images[0].width, 1090)}
             />
-            <div className={styles.decriptionTitle}>{jobs[index].title}</div>
+            <div className={styles.jobTitle}>{jobs[index].title}</div>
             <div className={styles.workBody}>
                 {jobs[index].images.map((image, i) => (
                     <img
