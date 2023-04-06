@@ -1,47 +1,27 @@
-import { useState, useRef } from 'react';
+import Link from 'next/link';
+import { useState } from 'react';
 import styles from '../../styles/PictureHolder.module.css';
-import Animate from './animate';
 
 const PictureHolder = (props) => {
     const {
         job,
         width = 300,
         height = 200,
-        clickView,
-        clickZoom
+        clickZoom,
+        index
     } = props;
 
     const [hover, setHover] = useState(false);
 
-    const animateFunctionsView = useRef({});
-    const animateFunctionsZoom = useRef({});
-
+    const jobUrl = `/work?index=${index}`;
     let imgSizeProp = { width: hover ? '120%' : '100%' };
 
     if (job.images[0].height < job.images[0].width) {
         imgSizeProp = { height: hover ? '120%' : '100%' };
     }
 
-    const inflate = () => {
-        if (animateFunctionsView.current.inflate) {
-            animateFunctionsView.current.inflate({ sizeIncrementAmount: 3 });
-        }
-        if (animateFunctionsZoom.current.inflate) {
-            animateFunctionsZoom.current.inflate({ sizeIncrementAmount: 3 });
-        }
-    };
-
-    const reset = () => {
-        if (animateFunctionsView.current.reset) {
-            animateFunctionsView.current.reset();
-        }
-        if (animateFunctionsZoom.current.reset) {
-            animateFunctionsZoom.current.reset();
-        }
-    };
-
     return (
-        <div className={styles.pictureHolderContainer} onClick={clickView}>
+        <Link className={styles.pictureHolderContainer} href={jobUrl}>
             <div className={styles.pictureTitle}>{job.title}</div>
             <div
                 style={{
@@ -55,51 +35,30 @@ const PictureHolder = (props) => {
                 }}
                 onMouseEnter={async () => {
                     setHover(true);
-                    inflate();
                 }}
                 onMouseLeave={async () => {
                     setHover(false);
-                    reset();
                 }}
             >
                 <div
+                    className={styles.pictureCover}
                     style={{
                         width,
                         height,
-                        position: 'absolute',
-                        background: hover ? '#00000055' : 'transparent',
-                        transition: '500ms',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center'
                     }}
                 >
-                    {!!clickView && (
-                        <Animate
-                            getMethods={funcsObject => animateFunctionsView.current = funcsObject}
-                            originalSize={0}
-                        >
-                            <div
-                                onClick={clickView}
-                                className={styles.pictureButton}
-                            >
-                                VIEW
-                            </div>
-                        </Animate>
-                    )}
-                    {!!clickZoom && (
-                        <Animate
-                            getMethods={funcsObject => animateFunctionsZoom.current = funcsObject}
-                            originalSize={0}
-                        >
-                            <div
-                                onClick={clickZoom}
-                                className={styles.pictureButton}
-                            >
-                                ZOOM
-                            </div>
-                        </Animate>
-                    )}
+                    <Link
+                        href={jobUrl}
+                        className={styles.pictureButton}
+                    >
+                        VIEW
+                    </Link>
+                    <div
+                        onClick={clickZoom}
+                        className={styles.pictureButton}
+                    >
+                        ZOOM
+                    </div>
                 </div>
                 <img
                     src={job.images[0].src}
@@ -111,7 +70,7 @@ const PictureHolder = (props) => {
                     {...imgSizeProp}
                 ></img>
             </div>
-        </div>
+        </Link>
     );
 }
 

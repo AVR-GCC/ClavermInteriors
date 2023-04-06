@@ -5,6 +5,7 @@
     border: 1px solid #e9e9e9;
     transition: 500ms;
     padding: 5px;
+    margin: 20px;
 }
 
 .pictureHolderContainer:hover {
@@ -15,6 +16,27 @@
     font-family: 'Qwigley', cursive;
     font-size: 35px;
     cursor: default;
+}
+
+.pictureCover {
+    position: absolute;
+    background: transparent;
+    transition: 500ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pictureCover > .pictureButton {
+    transform: scale(0.001);
+}
+
+.pictureCover:hover {
+    background: #00000055;
+}
+
+.pictureCover:hover > .pictureButton {
+    transform: scale(1);
 }
 
 .pictureButton {
