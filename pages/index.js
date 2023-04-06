@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Page from './components/page';
 import styles from '../styles/Home.module.css';
 import mainImage from '../public/main-image.jpg';

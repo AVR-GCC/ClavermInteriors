@@ -1,4 +1,4 @@
-import styles from '../../styles/Home.module.css';
+import styles from '../../styles/TitleBar.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import logoImage from '../../public/logo-image.png';
