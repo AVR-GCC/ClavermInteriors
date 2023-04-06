@@ -99,27 +99,3 @@
   margin-top: 30px;
   margin-bottom: 10px;
 }
-
-.workBody {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 0 20vw;
-  padding-top: 15px;
-}
-
-.workJobContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.workJobImage {
-  cursor: pointer;
-  transition: box-shadow 0.2s ease-in-out;
-}
-
-.workJobImage:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-}
