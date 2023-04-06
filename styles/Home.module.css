@@ -142,11 +142,15 @@
 
 .workBody {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 0 20vw;
   padding-top: 15px;
 }
 
-.pictureHolderHolder {
-  margin: 20px;
+.workJobContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

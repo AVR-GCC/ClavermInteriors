@@ -58,6 +58,10 @@
     font-weight: 300;
 }
 
+.sectionText > p {
+    margin: 5px;
+}
+
 .bottomFooter {
     display: flex;
     justify-content: center;
