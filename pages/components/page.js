@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '../../styles/Home.module.css';
 import TitleBar from './titleBar';
 import Footer from './footer';
 
@@ -10,7 +9,7 @@ const Page = ({ children }) => {
                 <title>Claverm Interiors</title>
             </Head>
             <TitleBar />
-            <div className={styles.bottomSection}>
+            <div style={{ marginTop: 150 }}>
                 {children}
                 <Footer />
             </div>
