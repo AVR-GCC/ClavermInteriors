@@ -5,7 +5,7 @@ import styles from '../../styles/ZoomPicture.module.css';
 
 const ZoomPicture = (props) => {
     const { pic, clickArrow, onXClick } = props;
-    if (!pic) return <div />;
+    if (!pic) return null;
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
