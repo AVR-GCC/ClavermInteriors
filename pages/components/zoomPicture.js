@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
-import { MdZoomInMap } from 'react-icons/md';
+import { BsFullscreenExit } from 'react-icons/bs';
 import ArrowNavigation from "./arrowNavigation";
 import styles from '../../styles/ZoomPicture.module.css';
 
 const ZoomPicture = (props) => {
     const { pic, clickArrow, onXClick } = props;
+    if (!pic) return <div />;
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -27,7 +28,7 @@ const ZoomPicture = (props) => {
                     height={window.innerHeight}
                 />
             )}
-            <MdZoomInMap className={styles.XIcon} onClick={onXClick} />
+            <BsFullscreenExit className={styles.XIcon} onClick={onXClick} />
             <img
                 src={pic.src}
                 alt={pic.src}

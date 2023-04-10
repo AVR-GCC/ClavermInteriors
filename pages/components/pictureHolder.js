@@ -10,13 +10,14 @@ const PictureHolder = (props) => {
         clickZoom,
         index
     } = props;
+    if (!job) return null;
 
     const [hover, setHover] = useState(false);
 
     const jobUrl = `/work?index=${index}`;
     let imgSizeProp = { width: hover ? '120%' : '100%' };
 
-    if (job.images[0].height < job.images[0].width) {
+    if (job?.images[0]?.height < job?.images[0]?.width) {
         imgSizeProp = { height: hover ? '120%' : '100%' };
     }
 

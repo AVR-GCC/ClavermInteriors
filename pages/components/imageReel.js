@@ -7,10 +7,11 @@ import ArrowNavigation from './arrowNavigation';
 const IMAGE_TIME = 3000;
 
 const ImageReel = ({
-    images,
+    images = [],
     width = "100%",
     height = 700
 }) => {
+    if (!images.length) return null;
     const [topImageIndex, setTopImageIndex] = useState(0);
     const [bottomImageIndex, setBottomImageIndex] = useState(1);
     const [canSwitch, setCanSwitch] = useState(true);
