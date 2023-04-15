@@ -5,18 +5,41 @@ import watermark2 from '../public/watermarked2.jpg';
 import watermark3 from '../public/Watermarked3.jpg';
 import watermark4 from '../public/Watermarked4.jpg';
 import ImageReel from './components/imageReel';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
+  const [windowWidth, setWindowWidth] = useState(1000);
+
+  const setWindowWidthSoon = () => {
+    setTimeout(() => {
+      setWindowWidth(window.innerWidth - 12);
+    }, 30);
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.addEventListener('resize', setWindowWidthSoon);
+      return () => window.removeEventListener('resize', setWindowWidthSoon)
+    })
+  }, [])
+
+  useEffect(() => {
+    setWindowWidthSoon();
+  }, []);
+
   return (
     <>
       <main>
         <Page>
-          <ImageReel images={[
-            mainImage.src,
-            watermark2.src,
-            watermark3.src,
-            watermark4.src
-          ]} />
+          <ImageReel
+            width={windowWidth}
+            images={[
+              mainImage,
+              watermark2,
+              watermark3,
+              watermark4
+            ]}
+          />
           <div className={styles.descriptionSection}>
             <div className={styles.decriptionTitle}>
               Why Claverm cares about your interior.

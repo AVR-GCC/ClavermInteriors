@@ -1,5 +1,9 @@
-.image {
+.imageHolder {
     position: absolute;
+    max-width: 100%;
+    overflow: hidden;
+}
+.image {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -7,6 +11,9 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .image:focus {
     outline: none !important;
