@@ -4,14 +4,31 @@ import Page from "./components/page";
 import PictureHolder from "./components/pictureHolder";
 import { defined } from '../utils';
 import styles from '../styles/Work.module.css';
-import watermark1 from '../public/Watermark.jpg';
-import watermark3 from '../public/Watermarked3.jpg';
-import watermark4 from '../public/Watermarked4.jpg';
-import watermark5 from '../public/Watermarked5.jpg';
-import watermark6 from '../public/Watermarked6.jpg';
-import watermark7 from '../public/Watermarked7.jpg';
-import watermark8 from '../public/Watermarked11.jpg';
-import consoleimg from '../public/console.jpg';
+import after from '../public/after.jpg';
+import before from '../public/before.jpg';
+import inprogress1 from '../public/inprogress1.jpg';
+import commercialclothdisplay from '../public/commercialclothddisplay.jpg';
+import commercialclothdisplay2 from '../public/commercialclothddisplay2.jpg';
+import commercialclothdisplay3 from '../public/commercialclothddisplay3.jpg';
+import ankaracurtains3 from '../public/anakaracurtains2.jpg';
+import ankaracurtains from '../public/ankaracurtains.jpg';
+import curtains from '../public/curtains.jpg';
+import betsafelogo from '../public/betsafelogo.jpg';
+import officespace from '../public/officespace.jpg';
+import officespace2 from '../public/officespace2.jpg';
+import repair1 from '../public/repair1.jpg';
+import repair2 from '../public/repair2.jpg';
+import repair3 from '../public/repair3.jpg';
+import gypsumbednet from '../public/gypsumnbednet.jpg';
+import completewithsnakelight from '../public/completewithsnakelight.jpg';
+import inprogress from '../public/inprogress.jpg';
+import curtainandwallpaper from '../public/curtain-and-wallpaper.jpeg';
+import lighting from '../public/lighting.jpg';
+import kitchen from '../public/kitchen.jpg';
+import kidsroom from '../public/kidsroom.jpg';
+import masterbedroom from '../public/masterbedroom.jpg';
+import livingroom1 from '../public/livingroom1.jpg';
+import livingroom2 from '../public/livingroom2.jpg';
 import ZoomPicture from './components/zoomPicture';
 
 function Work() {
@@ -22,58 +39,69 @@ function Work() {
         {
             title: 'Kileleshwa',
             images: [
-                watermark1,
-                consoleimg,
-                watermark4,
-                watermark5,
-                watermark8,
-                watermark6
+                after,
+                before,
+                inprogress1,
+            ]
+        },
+        {
+            title: 'Jewel Complex',
+            images: [
+                commercialclothdisplay,
+                commercialclothdisplay2,
+                commercialclothdisplay3
             ]
         },
         {
             title: 'Kilimani 1',
             images: [
-                watermark4,
-                watermark5,
-                watermark3,
-                watermark7,
-                watermark8,
-                watermark6
+                ankaracurtains3,
+                ankaracurtains,
+                curtains,
             ]
         },
         {
-            title: 'Kilimani 2',
+            title: 'Bet Safe',
             images: [
-                watermark3,
-                watermark7,
-                watermark8,
-                watermark6
+                betsafelogo,
+                officespace,
+                officespace2,
             ]
         },
         {
-            title: 'Some',
+            title: 'Kileleshwa 2',
             images: [
-                watermark7,
-                watermark8,
-                watermark6
+                repair1,
+                repair2,
+                repair3,
             ]
         },
         {
-            title: 'Other',
+            title: 'Gypsum',
             images: [
-                watermark8,
-                watermark6
+                gypsumbednet,
+                completewithsnakelight,
+                inprogress,
             ]
         },
         {
-            title: 'Project',
+            title: 'Lavington',
             images: [
-                watermark6,
-                watermark7,
-                watermark8
+                curtainandwallpaper,
+                lighting,
+                kitchen,
+                kidsroom,
+                masterbedroom,
             ]
         },
-    ];
+        {
+            title: 'Mombasa',
+            images: [
+                livingroom1,
+                livingroom2,
+            ]
+        }
+    ]
 
     const clickArrow = (left = false) => {
         let image = zoomPic.image + (left ? -1 : 1);

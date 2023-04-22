@@ -1,9 +1,11 @@
 import Page from './components/page';
 import styles from '../styles/Home.module.css';
-import mainImage from '../public/main-image.jpg';
-import watermark2 from '../public/watermarked2.jpg';
-import watermark3 from '../public/Watermarked3.jpg';
-import watermark4 from '../public/Watermarked4.jpg';
+import modernoffice from '../public/modernoffice.png';
+import modernrustic from '../public/modernrustic.png';
+import simpleelegant from '../public/simpleelegant.png';
+import sess from '../public/simpleelegantsmallspaces.png';
+import smallspaces from '../public/smallspaces.png';
+import themed from '../public/themed.png';
 import ImageReel from './components/imageReel';
 import { useEffect, useState } from 'react';
 
@@ -34,10 +36,12 @@ const Home = () => {
           <ImageReel
             width={windowWidth}
             images={[
-              mainImage,
-              watermark2,
-              watermark3,
-              watermark4
+              modernoffice,
+              modernrustic,
+              simpleelegant,
+              sess,
+              smallspaces,
+              themed
             ]}
           />
           <div className={styles.descriptionSection}>
