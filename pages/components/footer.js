@@ -3,10 +3,12 @@ import styles from '../../styles/Footer.module.css';
 import logoImage from '../../public/logo-image-dark.png';
 import { AiFillFacebook } from 'react-icons/ai';
 import { FaInstagramSquare } from 'react-icons/fa';
+import useWindowSize from '../useWindowSize';
 
 const Footer = () => {
+    const { width } = useWindowSize();
     return (
-        <div className={styles.footerContainer}>
+        <div className={styles.footerContainer} style={width > 800 ? {} : { flexDirection: 'column' }}>
             <div className={styles.topFooter}>
                 <div className={styles.section}>
                     <img src={logoImage.src} alt="logo-image" width="250px" />

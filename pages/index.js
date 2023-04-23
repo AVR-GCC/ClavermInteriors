@@ -7,34 +7,16 @@ import sess from '../public/simpleelegantsmallspaces.png';
 import smallspaces from '../public/smallspaces.png';
 import themed from '../public/themed.png';
 import ImageReel from './components/imageReel';
-import { useEffect, useState } from 'react';
+import useWindowSize from './useWindowSize';
 
 const Home = () => {
-  const [windowWidth, setWindowWidth] = useState(1000);
-
-  const setWindowWidthSoon = () => {
-    setTimeout(() => {
-      setWindowWidth(window.innerWidth - 12);
-    }, 30);
-  }
-
-  useEffect(() => {
-    setTimeout(() => {
-      window.addEventListener('resize', setWindowWidthSoon);
-      return () => window.removeEventListener('resize', setWindowWidthSoon)
-    })
-  }, [])
-
-  useEffect(() => {
-    setWindowWidthSoon();
-  }, []);
-
+  const { width } = useWindowSize();
   return (
     <>
       <main>
         <Page>
           <ImageReel
-            width={windowWidth}
+            width={width}
             images={[
               modernoffice,
               modernrustic,
