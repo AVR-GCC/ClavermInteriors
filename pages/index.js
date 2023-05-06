@@ -10,7 +10,8 @@ import ImageReel from './components/imageReel';
 import useWindowSize from './useWindowSize';
 
 const Home = () => {
-  const { width } = useWindowSize();
+  const { width, height } = useWindowSize();
+  console.log({ width, height });
   return (
     <>
       <main>
