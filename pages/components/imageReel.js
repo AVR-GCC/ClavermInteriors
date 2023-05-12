@@ -25,7 +25,7 @@ const ImageReel = ({
         if (index === images.length) return 0;
         if (index === -1) return images.length - 1;
         return index;
-    }
+    };
 
     const fadeAndSwitch = async (toIndex) => {
         setCanSwitch(false);
@@ -41,7 +41,7 @@ const ImageReel = ({
     const fadeAndSwitchNext = () => {
         const nextNextIndex = getNewNextImageIndex(topImageIndexRef.current + 1);
         fadeAndSwitch(nextNextIndex);
-    }
+    };
 
     useEffect(() => {
         intervalRef.current = setInterval(fadeAndSwitchNext, IMAGE_TIME);
@@ -95,6 +95,6 @@ const ImageReel = ({
             <div style={{ width, height }} />
         </div>
     );
-}
+};
 
 export default ImageReel;

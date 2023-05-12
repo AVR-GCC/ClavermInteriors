@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import styles from '../../styles/Footer.module.css';
+import Link from 'next/link';
 import logoImage from '../../public/logo-image-dark.png';
 import { AiFillFacebook } from 'react-icons/ai';
 import { FaInstagramSquare } from 'react-icons/fa';
@@ -46,7 +46,7 @@ const Footer = () => {
                     <div className={styles.sectionTitle}>Opening Hours</div>
                     <div className={styles.sectionText} style={{ cursor: 'default' }}>
                         <p>Mon - Fri: 9am - 5pm</p>
-                        <p>​​Sat - Sun: Closed</p>
+                        <p>Sat - Sun: Closed</p>
                     </div>
                 </div>
             </div>
@@ -55,6 +55,6 @@ const Footer = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Footer;
