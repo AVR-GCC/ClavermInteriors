@@ -7,16 +7,13 @@ import sess from '../public/simpleelegantsmallspaces.png';
 import smallspaces from '../public/smallspaces.png';
 import themed from '../public/themed.png';
 import ImageReel from './components/imageReel';
-import useWindowSize from './useWindowSize';
 
 const Home = () => {
-    const { width } = useWindowSize();
     return (
         <>
             <main>
                 <Page>
                     <ImageReel
-                        width={width}
                         images={[
                             modernoffice,
                             modernrustic,

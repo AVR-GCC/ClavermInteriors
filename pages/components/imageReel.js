@@ -8,7 +8,6 @@ const IMAGE_TIME = 3000;
 
 const ImageReel = ({
     images = [],
-    width = 1000,
     height = 700
 }) => {
     if (!images.length) return null;
@@ -16,7 +15,6 @@ const ImageReel = ({
     const [bottomImageIndex, setBottomImageIndex] = useState(1);
     const [canSwitch, setCanSwitch] = useState(true);
     const intervalRef = useRef(null);
-    const useWidthRef = useRef(Array(images.length).fill(false));
     const topImageIndexRef = useRef(0);
 
     const animateFunctions = useRef({});
@@ -48,18 +46,6 @@ const ImageReel = ({
         return () => clearInterval(intervalRef.current);
     }, []);
 
-    useEffect(() => {
-        useWidthRef.current = Array(images.length).fill(false);
-        for (let i = 0; i < images.length; i++) {
-            const pic = images[i];
-            const imageRatio = pic.width / pic.height;
-            const screenRatio = width / height;
-            if (imageRatio < screenRatio) {
-                useWidthRef.current[i] = true;
-            }
-        }
-    }, [images, width, height]);
-
     const clickArrow = (left = false) => {
         clearInterval(intervalRef.current);
         if (!canSwitch) return;
@@ -68,31 +54,26 @@ const ImageReel = ({
         fadeAndSwitch(nextNextIndex);
     };
 
-    let mainImageProp = useWidthRef.current[topImageIndex] ? { width: '100%' } : { height: '100%' };
-    let secondaryImageProp = useWidthRef.current[bottomImageIndex] ? { width: '100%' } : { height: '100%' };
-
     return (
         <div className={styles.mainImage}>
             <ArrowNavigation clickArrow={clickArrow} height={height} />
             <Animate getMethods={funcsObject => animateFunctions.current = funcsObject}>
-                <div className={styles.imageHolder} style={{ zIndex: 1, width, height }}>
+                <div className={styles.imageHolder} style={{ zIndex: 1, width: '100%', height }}>
                     <img
                         className={styles.image}
                         src={images[topImageIndex].src}
                         alt="main-image"
-                        {...mainImageProp}
                     ></img>
                 </div>
             </Animate>
-            <div className={styles.imageHolder} style={{ zIndex: -1, width, height }}>
+            <div className={styles.imageHolder} style={{ zIndex: -1, width: '100%', height }}>
                 <img
                     className={styles.image}
                     src={images[bottomImageIndex].src}
                     alt="secondary-image"
-                    {...secondaryImageProp}
                 ></img>
             </div>
-            <div style={{ width, height }} />
+            <div style={{ width: '100%', height }} />
         </div>
     );
 };
