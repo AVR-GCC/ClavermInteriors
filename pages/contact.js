@@ -30,7 +30,7 @@ const Contact = () => {
                 />
                 <ContactLine
                     icon={<MdMail />}
-                    text={email}
+                    text={<div className={styles.emailText}>{email}</div>}
                     onClick={() => {
                         window.open(`mailto:${email}?subject=${subject}&body=`);
                     }}
