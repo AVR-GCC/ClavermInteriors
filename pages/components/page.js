@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import TitleBar from './titleBar';
 import Footer from './footer';
 
