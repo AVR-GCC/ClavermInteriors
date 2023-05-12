@@ -8,7 +8,7 @@ const IMAGE_TIME = 3000;
 
 const ImageReel = ({
     images = [],
-    height = 700
+    height = '70vh'
 }) => {
     if (!images.length) return null;
     const [topImageIndex, setTopImageIndex] = useState(0);
